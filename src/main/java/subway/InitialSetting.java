@@ -18,6 +18,7 @@ public class InitialSetting {
     void setDefaultValues() {
         addInitialStation();
         addInitialLine();
+        addInitialSection();
     }
 
     private void addInitialStation() {
@@ -34,5 +35,26 @@ public class InitialSetting {
         lineRepository.addLine(new Line("2호선"));
         lineRepository.addLine(new Line("3호선"));
         lineRepository.addLine(new Line("신분당선"));
+    }
+
+    private void addInitialSection() {
+        for(Line line: lineRepository.lines()){
+            if(line.getName()=="2호선"){
+                line.addStation("교대역");
+                line.addStation("강남역");
+                line.addStation("역삼역");
+            }
+            if(line.getName()=="3호선"){
+                line.addStation("교대역");
+                line.addStation("남부터미널역");
+                line.addStation("양재역");
+                line.addStation("매봉역");
+            }
+            if(line.getName()=="신분당선"){
+                line.addStation("강남역");
+                line.addStation("양재역");
+                line.addStation("양재시민의숲역");
+            }
+        }
     }
 }

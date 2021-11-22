@@ -1,11 +1,11 @@
 package subway;
 
+import java.util.Scanner;
+import java.util.ArrayList;
 import subway.domain.Station;
 import subway.domain.StationRepository;
 import subway.domain.Line;
 import subway.domain.LineRepository;
-
-import java.util.Scanner;
 
 public class SubwaySystem {
 
