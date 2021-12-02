@@ -16,6 +16,11 @@ public class SubwaySystem {
     public LineRepository lineRepository;
     private View view = new View();
     private final String EXIT = "Q";
+    private final String BACK = "B";
+    private final int MANAGE_STATION = 1;
+    private final int MANAGE_LINE = 2;
+    private final int MANAGE_SECTION = 3;
+    private final int MANAGE_MAP = 4;
 
     public SubwaySystem(Scanner scanner) {
         this.scanner = scanner;
@@ -43,6 +48,7 @@ public class SubwaySystem {
     private void performMainTask(String mainInput) {
         if (checkValueIsValid(mainInput)) {
             int number = Integer.parseInt(mainInput);
+            checkMainTask(number);
             return;
         }
         view.printErrorOfMainTask();
@@ -61,5 +67,28 @@ public class SubwaySystem {
     private boolean isNumber(String inputCount) {
         boolean isNumeric = inputCount.matches("[+-]?\\d*(\\.\\d+)?");
         return isNumeric;
+    }
+
+    private void checkMainTask(int number) {
+        if (number == MANAGE_STATION) {
+            manageStation();
+        }
+        if (number == MANAGE_LINE) {
+
+        }
+        if (number == MANAGE_SECTION) {
+
+        }
+        if (number == MANAGE_MAP) {
+
+        }
+    }
+
+    private void manageStation() {
+        String stationInput = "";
+        while (!stationInput.equals(BACK)) {
+            view.printStationMenu();
+            stationInput = scanner.nextLine();
+        }
     }
 }
