@@ -44,7 +44,7 @@ public class MainSection {
             addSection();
         }
         if (number == DELETE_SECTION) {
-
+            deleteSection();
         }
     }
 
@@ -58,5 +58,15 @@ public class MainSection {
 
         lineRepository.addSection(Line, newStation, sequence);
         view.printInfoOfAddSection();
+    }
+
+    private void deleteSection() {
+        view.printDeleteSection();
+        String Line = scanner.nextLine();
+        view.printDeleteSectionLine();
+        String Station = scanner.nextLine();
+
+        lineRepository.deleteSection(Line, Station);
+        view.printInfoOfDeleteSection();
     }
 }

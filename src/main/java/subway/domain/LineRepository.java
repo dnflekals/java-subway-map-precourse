@@ -28,4 +28,13 @@ public class LineRepository {
             }
         }
     }
+
+    public static void deleteSection(String Line, String station){
+        for (Line line : lines){
+            if (line.getName().equals(Line)) {
+                int index=line.station.indexOf(station);
+                line.station.remove(index);
+            }
+        }
+    }
 }

@@ -127,6 +127,22 @@ public class View {
     }
 
     public void printInfoOfAddSection() {
+        System.out.println();
         System.out.println("[INFO] 구간이 등록되었습니다.");
+    }
+
+    public void printDeleteSection() {
+        System.out.println();
+        System.out.println("### 삭제할 구간의 노선을 입력하세요.");
+    }
+
+    public void printDeleteSectionLine() {
+        System.out.println();
+        System.out.println("### 삭제할 구간의 역을 입력하세요.");
+    }
+
+    public void printInfoOfDeleteSection() {
+        System.out.println();
+        System.out.println("[INFO] 구간이 삭제되었습니다.");
     }
 }
