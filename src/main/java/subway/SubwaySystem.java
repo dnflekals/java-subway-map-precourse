@@ -1,6 +1,7 @@
 package subway;
 
 import java.util.Scanner;
+import subway.domain.Line;
 import subway.domain.Station;
 import subway.domain.StationRepository;
 import subway.domain.LineRepository;
@@ -68,7 +69,22 @@ public class SubwaySystem {
             mainSection.manageSection(lineRepository);
         }
         if (number == MANAGE_MAP) {
+            showMap();
+        }
+    }
 
+    private void showMap() {
+        view.printMap();
+        for(Line line:lineRepository.lines()){
+            System.out.print("[INFO] ");
+            System.out.println(line.getName());
+            System.out.println("---");
+
+            for(String station:line.station){
+                System.out.print("[INFO] ");
+                System.out.println(station);
+            }
+            System.out.println();
         }
     }
 }

@@ -145,4 +145,9 @@ public class View {
         System.out.println();
         System.out.println("[INFO] 구간이 삭제되었습니다.");
     }
+
+    public void printMap(){
+        System.out.println();
+        System.out.println("### 지하철 노선도");
+    }
 }
