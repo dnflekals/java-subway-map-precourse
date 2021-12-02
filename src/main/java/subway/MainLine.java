@@ -46,7 +46,7 @@ public class MainLine {
             addLine();
         }
         if (number == DELETE_LINE) {
-
+            deleteLine();
         }
         if (number == SHOW_LINE) {
 
@@ -69,5 +69,12 @@ public class MainLine {
             }
         }
         view.printInfoOfAddLine();
+    }
+
+    private void deleteLine() {
+        view.printDeleteLine();
+        String lineName = scanner.nextLine();
+        lineRepository.deleteLineByName(lineName);
+        view.printInfoOfDeleteLine();
     }
 }

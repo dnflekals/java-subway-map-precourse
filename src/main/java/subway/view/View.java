@@ -85,4 +85,14 @@ public class View {
     public void printInfoOfAddLine() {
         System.out.println("[INFO] 지하철 노선이 등록되었습니다.");
     }
+
+    public void printDeleteLine() {
+        System.out.println();
+        System.out.println("### 삭제할 노선 이름을 입력하세요.");
+    }
+
+    public void printInfoOfDeleteLine() {
+        System.out.println();
+        System.out.println("[INFO] 지하철 노선이 삭제되었습니다.");
+    }
 }
