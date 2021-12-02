@@ -57,14 +57,14 @@ public class MainStation {
         view.printAddStation();
         String station = scanner.nextLine();
         stationRepository.addStation(new Station(station));
-        view.printInfoOfAdd();
+        view.printInfoOfAddStation();
     }
 
     private void deleteStation() {
         view.printDeleteStation();
         String station = scanner.nextLine();
         stationRepository.deleteStation(station);
-        view.printInfoOfDelete();
+        view.printInfoOfDeleteStation();
     }
 
     private void showStation() {

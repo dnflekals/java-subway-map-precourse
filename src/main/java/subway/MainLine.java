@@ -1,6 +1,7 @@
 package subway;
 
 import java.util.Scanner;
+import subway.domain.Line;
 import subway.domain.LineRepository;
 import subway.view.View;
 
@@ -21,6 +22,52 @@ public class MainLine {
         while (!lineInput.equals(BACK)) {
             view.printLineMenu();
             lineInput = scanner.nextLine();
+            if (performStationTask(lineInput)) {
+                lineInput = BACK;
+            }
         }
+    }
+
+    private boolean performStationTask(String stationInput) {
+        if (validation.checkLineValueIsValid(stationInput)) {
+            int number = Integer.parseInt(stationInput);
+            checkLineTask(number);
+            return true;
+        }
+        if (stationInput.equals(BACK)) {
+            return true;
+        }
+        view.printErrorOfMainTask();
+        return false;
+    }
+
+    private void checkLineTask(int number) {
+        if (number == ADD_LINE) {
+            addLine();
+        }
+        if (number == DELETE_LINE) {
+
+        }
+        if (number == SHOW_LINE) {
+
+        }
+    }
+
+    private void addLine() {
+        view.printAddLine();
+        String newLine = scanner.nextLine();
+        view.printUpBoundStation();
+        String upBoundStation = scanner.nextLine();
+        view.printDownBoundStation();
+        String downBoundStation = scanner.nextLine();
+
+        lineRepository.addLine(new Line(newLine));
+        for (Line line : lineRepository.lines()) {
+            if (line.getName() == newLine) {
+                line.addStation(upBoundStation);
+                line.addStation(downBoundStation);
+            }
+        }
+        view.printInfoOfAddLine();
     }
 }

@@ -11,7 +11,7 @@ public class View {
         System.out.println("4. 지하철 노선도 관리");
         System.out.println("Q. 종료");
         System.out.println();
-        System.out.println("## 원하는 기능을 선택하세요.");
+        System.out.println("### 원하는 기능을 선택하세요.");
     }
 
     public void printErrorOfMainTask() {
@@ -22,48 +22,67 @@ public class View {
 
     public void printStationMenu() {
         System.out.println();
-        System.out.println("###역 관리 화면");
+        System.out.println("### 역 관리 화면");
         System.out.println("1. 역 등록");
         System.out.println("2. 역 삭제");
         System.out.println("3. 역 조회");
         System.out.println("B. 돌아가기");
         System.out.println();
-        System.out.println("###원하는 기능을 선택하세요.");
+        System.out.println("### 원하는 기능을 선택하세요.");
     }
 
-    public void printAddStation(){
+    public void printAddStation() {
         System.out.println();
-        System.out.println("등록할 역 이름을 입력하세요.");
+        System.out.println("### 등록할 역 이름을 입력하세요.");
     }
 
-    public void printInfoOfAdd(){
+    public void printInfoOfAddStation() {
         System.out.println();
         System.out.println("[INFO] 지하철 역이 등록되었습니다.");
     }
 
-    public void printDeleteStation(){
+    public void printDeleteStation() {
         System.out.println();
-        System.out.println("삭제할 역 이름을 입력하세요.");
+        System.out.println("### 삭제할 역 이름을 입력하세요.");
     }
 
-    public void printInfoOfDelete(){
+    public void printInfoOfDeleteStation() {
         System.out.println();
         System.out.println("[INFO] 지하철 역이 삭제되었습니다.");
     }
 
-    public void printListOfStation(){
+    public void printListOfStation() {
         System.out.println();
         System.out.println("### 역 목록");
     }
 
     public void printLineMenu() {
         System.out.println();
-        System.out.println("###노선 관리 화면");
+        System.out.println("### 노선 관리 화면");
         System.out.println("1. 노선 등록");
         System.out.println("2. 노선 삭제");
         System.out.println("3. 노선 조회");
         System.out.println("B. 돌아가기");
         System.out.println();
-        System.out.println("###원하는 기능을 선택하세요.");
+        System.out.println("### 원하는 기능을 선택하세요.");
+    }
+
+    public void printAddLine() {
+        System.out.println();
+        System.out.println("### 등록할 노선 이름을 입력하세요.");
+    }
+
+    public void printUpBoundStation() {
+        System.out.println();
+        System.out.println("### 등록할 노선의 상행 종점역 이름을 입력하세요.");
+    }
+
+    public void printDownBoundStation() {
+        System.out.println();
+        System.out.println("### 등록할 노선의 하행 종점역 이름을 입력하세요.");
+    }
+
+    public void printInfoOfAddLine() {
+        System.out.println("[INFO] 지하철 노선이 등록되었습니다.");
     }
 }
