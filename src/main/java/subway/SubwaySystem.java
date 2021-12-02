@@ -1,11 +1,8 @@
 package subway;
 
-import java.awt.print.Printable;
 import java.util.Scanner;
-import java.util.ArrayList;
 import subway.domain.Station;
 import subway.domain.StationRepository;
-import subway.domain.Line;
 import subway.domain.LineRepository;
 import subway.view.View;
 
@@ -16,8 +13,8 @@ public class SubwaySystem {
     public LineRepository lineRepository;
     private Validation validation = new Validation();
     private View view = new View();
+    private MainStation mainStation = new MainStation();
     private final String EXIT = "Q";
-    private final String BACK = "B";
     private final int MANAGE_STATION = 1;
     private final int MANAGE_LINE = 2;
     private final int MANAGE_SECTION = 3;
@@ -47,7 +44,7 @@ public class SubwaySystem {
     }
 
     private void performMainTask(String mainInput) {
-        if (validation.checkValueIsValid(mainInput)) {
+        if (validation.checkMainValueIsValid(mainInput)) {
             int number = Integer.parseInt(mainInput);
             checkMainTask(number);
             return;
@@ -57,7 +54,7 @@ public class SubwaySystem {
 
     private void checkMainTask(int number) {
         if (number == MANAGE_STATION) {
-            manageStation();
+            mainStation.manageStation(stationRepository);
         }
         if (number == MANAGE_LINE) {
 
@@ -67,14 +64,6 @@ public class SubwaySystem {
         }
         if (number == MANAGE_MAP) {
 
-        }
-    }
-
-    private void manageStation() {
-        String stationInput = "";
-        while (!stationInput.equals(BACK)) {
-            view.printStationMenu();
-            stationInput = scanner.nextLine();
         }
     }
 }

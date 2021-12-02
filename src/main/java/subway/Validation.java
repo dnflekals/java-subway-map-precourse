@@ -2,10 +2,20 @@ package subway;
 
 public class Validation {
 
-    public boolean checkValueIsValid(String mainInput) {
+    public boolean checkMainValueIsValid(String mainInput) {
         if (isNumber(mainInput)) {
             int number = Integer.parseInt(mainInput);
             if (0 < number && number < 5) {
+                return true;
+            }
+        }
+        return false;
+    }
+
+    public boolean checkStationValueIsValid(String mainInput) {
+        if (isNumber(mainInput)) {
+            int number = Integer.parseInt(mainInput);
+            if (0 < number && number < 4) {
                 return true;
             }
         }
