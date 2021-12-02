@@ -49,6 +49,9 @@ public class SubwaySystem {
             checkMainTask(number);
             return;
         }
+        if (mainInput.equals(EXIT)) {
+            return;
+        }
         view.printErrorOfMainTask();
     }
 

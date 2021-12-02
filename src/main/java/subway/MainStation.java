@@ -22,17 +22,23 @@ public class MainStation {
         while (!stationInput.equals(BACK)) {
             view.printStationMenu();
             stationInput = scanner.nextLine();
-            performStationTask(stationInput);
+            if (performStationTask(stationInput)) {
+                stationInput = BACK;
+            }
         }
     }
 
-    private void performStationTask(String stationInput) {
+    private boolean performStationTask(String stationInput) {
         if (validation.checkStationValueIsValid(stationInput)) {
             int number = Integer.parseInt(stationInput);
             checkStationTask(number);
-            return;
+            return true;
+        }
+        if (stationInput.equals(BACK)) {
+            return true;
         }
         view.printErrorOfMainTask();
+        return false;
     }
 
     private void checkStationTask(int number) {
@@ -40,7 +46,7 @@ public class MainStation {
             addStation();
         }
         if (number == DELETE_STATION) {
-
+            deleteStation();
         }
         if (number == CHECK_STATION) {
 
@@ -51,6 +57,13 @@ public class MainStation {
         view.printAddStation();
         String station = scanner.nextLine();
         stationRepository.addStation(new Station(station));
-        view.printRegisterOfStation();
+        view.printInfoOfAdd();
+    }
+
+    private void deleteStation() {
+        view.printDeleteStation();
+        String station = scanner.nextLine();
+        stationRepository.deleteStation(station);
+        view.printInfoOfDelete();
     }
 }

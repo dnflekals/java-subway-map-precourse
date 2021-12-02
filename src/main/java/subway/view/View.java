@@ -32,8 +32,18 @@ public class View {
         System.out.println("등록할 역 이름을 입력하세요.");
     }
 
-    public void printRegisterOfStation(){
+    public void printInfoOfAdd(){
         System.out.println();
         System.out.println("[INFO] 지하철 역이 등록되었습니다.");
+    }
+
+    public void printDeleteStation(){
+        System.out.println();
+        System.out.println("삭제할 역 이름을 입력하세요.");
+    }
+
+    public void printInfoOfDelete(){
+        System.out.println();
+        System.out.println("[INFO] 지하철 역이 삭제되었습니다.");
     }
 }
