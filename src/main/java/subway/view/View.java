@@ -100,4 +100,14 @@ public class View {
         System.out.println();
         System.out.println("### 노선 목록");
     }
+
+    public void printSectionMenu() {
+        System.out.println();
+        System.out.println("### 구간 관리 화면");
+        System.out.println("1. 구간 등록");
+        System.out.println("2. 구간 삭제");
+        System.out.println("B. 돌아가기");
+        System.out.println();
+        System.out.println("### 원하는 기능을 선택하세요.");
+    }
 }

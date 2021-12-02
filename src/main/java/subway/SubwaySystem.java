@@ -15,6 +15,7 @@ public class SubwaySystem {
     private View view = new View();
     private MainStation mainStation = new MainStation();
     private MainLine mainLine = new MainLine();
+    private MainSection mainSection = new MainSection();
     private final String EXIT = "Q";
     private final int MANAGE_STATION = 1;
     private final int MANAGE_LINE = 2;
@@ -64,7 +65,7 @@ public class SubwaySystem {
             mainLine.manageLine(lineRepository);
         }
         if (number == MANAGE_SECTION) {
-
+            mainSection.manageSection(lineRepository);
         }
         if (number == MANAGE_MAP) {
 
