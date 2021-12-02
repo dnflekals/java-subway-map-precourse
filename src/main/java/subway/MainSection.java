@@ -1,6 +1,7 @@
 package subway;
 
 import java.util.Scanner;
+import subway.domain.Line;
 import subway.domain.LineRepository;
 import subway.view.View;
 
@@ -16,10 +17,46 @@ public class MainSection {
 
     public void manageSection(LineRepository lineRepository) {
         this.lineRepository = lineRepository;
-        String lineInput = "";
-        while (!lineInput.equals(BACK)) {
+        String sectionInput = "";
+        while (!sectionInput.equals(BACK)) {
             view.printSectionMenu();
-            lineInput = scanner.nextLine();
+            sectionInput = scanner.nextLine();
+            if (performSectionTask(sectionInput)) {
+                sectionInput = BACK;
+            }
         }
+    }
+
+    private boolean performSectionTask(String sectionInput) {
+        if (validation.checkSectionValueIsValid(sectionInput)) {
+            int number = Integer.parseInt(sectionInput);
+            checkSectionTask(number);
+            return true;
+        }
+        if (sectionInput.equals(BACK)) {
+            return true;
+        }
+        return false;
+    }
+
+    private void checkSectionTask(int number) {
+        if (number == ADD_SECTION) {
+            addSection();
+        }
+        if (number == DELETE_SECTION) {
+
+        }
+    }
+
+    private void addSection() {
+        view.printAddSection();
+        String Line = scanner.nextLine();
+        view.printAddSectionLine();
+        String newStation = scanner.nextLine();
+        view.printAddSectionSequence();
+        int sequence = scanner.nextInt();
+
+        lineRepository.addSection(Line, newStation, sequence);
+        view.printInfoOfAddSection();
     }
 }

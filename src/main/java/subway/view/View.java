@@ -110,4 +110,23 @@ public class View {
         System.out.println();
         System.out.println("### 원하는 기능을 선택하세요.");
     }
+
+    public void printAddSection() {
+        System.out.println();
+        System.out.println("### 노선을 입력하세요.");
+    }
+
+    public void printAddSectionLine() {
+        System.out.println();
+        System.out.println("### 역이름을 입력하세요.");
+    }
+
+    public void printAddSectionSequence() {
+        System.out.println();
+        System.out.println("### 순서를 입력하세요.");
+    }
+
+    public void printInfoOfAddSection() {
+        System.out.println("[INFO] 구간이 등록되었습니다.");
+    }
 }
