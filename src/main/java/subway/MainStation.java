@@ -68,6 +68,7 @@ public class MainStation {
     }
 
     private void showStation() {
+        view.printListOfStation();
         for(Station stations:stationRepository.stations()){
             System.out.print("[INFO] ");
             System.out.println(stations.getName());

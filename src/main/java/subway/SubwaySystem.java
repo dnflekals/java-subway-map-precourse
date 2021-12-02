@@ -14,6 +14,7 @@ public class SubwaySystem {
     private Validation validation = new Validation();
     private View view = new View();
     private MainStation mainStation = new MainStation();
+    private MainLine mainLine = new MainLine();
     private final String EXIT = "Q";
     private final int MANAGE_STATION = 1;
     private final int MANAGE_LINE = 2;
@@ -60,7 +61,7 @@ public class SubwaySystem {
             mainStation.manageStation(stationRepository);
         }
         if (number == MANAGE_LINE) {
-
+            mainLine.manageLine(lineRepository);
         }
         if (number == MANAGE_SECTION) {
 
