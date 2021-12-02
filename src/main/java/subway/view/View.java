@@ -95,4 +95,9 @@ public class View {
         System.out.println();
         System.out.println("[INFO] 지하철 노선이 삭제되었습니다.");
     }
+
+    public void printListOfLine() {
+        System.out.println();
+        System.out.println("### 노선 목록");
+    }
 }

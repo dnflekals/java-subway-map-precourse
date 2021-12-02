@@ -49,7 +49,7 @@ public class MainLine {
             deleteLine();
         }
         if (number == SHOW_LINE) {
-
+            showLine();
         }
     }
 
@@ -76,5 +76,13 @@ public class MainLine {
         String lineName = scanner.nextLine();
         lineRepository.deleteLineByName(lineName);
         view.printInfoOfDeleteLine();
+    }
+
+    private void showLine() {
+        view.printListOfLine();
+        for(Line lines:lineRepository.lines()){
+            System.out.print("[INFO] ");
+            System.out.println(lines.getName());
+        }
     }
 }
