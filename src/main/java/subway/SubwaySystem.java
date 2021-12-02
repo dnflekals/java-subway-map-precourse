@@ -14,6 +14,7 @@ public class SubwaySystem {
     private final Scanner scanner;
     public StationRepository stationRepository;
     public LineRepository lineRepository;
+    private Validation validation = new Validation();
     private View view = new View();
     private final String EXIT = "Q";
     private final String BACK = "B";
@@ -46,27 +47,12 @@ public class SubwaySystem {
     }
 
     private void performMainTask(String mainInput) {
-        if (checkValueIsValid(mainInput)) {
+        if (validation.checkValueIsValid(mainInput)) {
             int number = Integer.parseInt(mainInput);
             checkMainTask(number);
             return;
         }
         view.printErrorOfMainTask();
-    }
-
-    private boolean checkValueIsValid(String mainInput) {
-        if (isNumber(mainInput)) {
-            int number = Integer.parseInt(mainInput);
-            if (0 < number && number < 5) {
-                return true;
-            }
-        }
-        return false;
-    }
-
-    private boolean isNumber(String inputCount) {
-        boolean isNumeric = inputCount.matches("[+-]?\\d*(\\.\\d+)?");
-        return isNumeric;
     }
 
     private void checkMainTask(int number) {
