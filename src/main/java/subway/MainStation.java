@@ -13,7 +13,7 @@ public class MainStation {
     private final String BACK = "B";
     private final int ADD_STATION = 1;
     private final int DELETE_STATION = 2;
-    private final int CHECK_STATION = 3;
+    private final int SHOW_STATION = 3;
     private StationRepository stationRepository;
 
     public void manageStation(StationRepository stationRepository) {
@@ -48,8 +48,8 @@ public class MainStation {
         if (number == DELETE_STATION) {
             deleteStation();
         }
-        if (number == CHECK_STATION) {
-
+        if (number == SHOW_STATION) {
+            showStation();
         }
     }
 
@@ -65,5 +65,12 @@ public class MainStation {
         String station = scanner.nextLine();
         stationRepository.deleteStation(station);
         view.printInfoOfDelete();
+    }
+
+    private void showStation() {
+        for(Station stations:stationRepository.stations()){
+            System.out.print("[INFO] ");
+            System.out.println(stations.getName());
+        }
     }
 }

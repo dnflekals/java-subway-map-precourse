@@ -46,4 +46,9 @@ public class View {
         System.out.println();
         System.out.println("[INFO] 지하철 역이 삭제되었습니다.");
     }
+
+    public void printListOfStation(){
+        System.out.println();
+        System.out.println("### 역 목록");
+    }
 }
